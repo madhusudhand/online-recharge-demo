@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const data = require('../../data.json');
+const userService = require('../../db/user-service');
 
 router.get('/', function(req, res, next) {
   res.send({
@@ -11,10 +11,15 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/user/:id', function(req, res, next) {
-  // console.log(req.params.id);
+  var user = userService.getUser(req.params.id);
   res.send({
-    user: data.users[0]
+    user: user
   });
+});
+
+router.post('/auth/user', function(req, res, next) {
+  var user = userService.getUserLogin(req.body);
+  res.send(user || {});
 });
 
 

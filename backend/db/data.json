@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user1@example.com",
+      "mobile": 9999999999,
+      "password": "123",
+      "name": "User 1 Full Name",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyMUBleGFtcGxlLmNvbSIsIm1vYmlsZSI6Ijk5OTk5OTk5OTkiLCJuYW1lIjoiVXNlciAxIEZ1bGwgTmFtZSIsImFkbWluIjp0cnVlfQ.QGmRZdhdqrEXJB3OFbWL7Q_v72sbpCRWGDWRd7xxqMk"
+    },
+    {
+      "id": 2,
+      "email": "user2@example.com",
+      "mobile": 8888888888,
+      "password": "123",
+      "name": "User 2 Full Name",
+      "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsIm1vYmlsZSI6Ijg4ODg4ODg4ODgiLCJuYW1lIjoiVXNlciAyIEZ1bGwgTmFtZSIsImFkbWluIjp0cnVlfQ.z2kkL-aqDR1eZGEubF6CrotDXKrpQbeSNj4QGWuXtXw"
+    }
+  ]
+}
