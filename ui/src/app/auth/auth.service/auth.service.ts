@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import {  } from 'rxjs/add/operator/map';
-import {  } from 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { Headers, Http, RequestOptions } from '@angular/http';
 
-// import { environment } from '../../../environments';
 import { AuthData } from './auth-data.interface';
 
 @Injectable()
 export class AuthService {
 
-  private url: string = '/auth';
+  private jwtKey: string = 'jwt';
+  private url: string = '/api/auth/user';
+
+  public jwt: string;
   public eventStream: Subject<boolean>;
 
   constructor(private http: Http) {
     this.eventStream = new Subject<boolean>();
-    this.updateLogin(!!localStorage.getItem('jwt'));
+    // this.updateLogin(!!localStorage.getItem('jwt'));
   }
 
   login (username, password): Observable<AuthData> {
@@ -37,12 +39,28 @@ export class AuthService {
     return Observable.throw(errMsg);
   }
 
+  private updateLogin(loggedIn: boolean){
+    this.eventStream.next(loggedIn);
+  }
+
   checkLogin() {
     return this.eventStream;
   }
 
-  updateLogin(loggedIn: boolean){
-    this.eventStream.next(loggedIn);
+  emit() {
+    this.updateLogin(!!localStorage.getItem(this.jwtKey));
+  }
+
+  setLogin(jwt) {
+    localStorage.setItem(this.jwtKey, jwt);
+    this.jwt = jwt;
+    this.emit();
+  }
+
+  clearLogin() {
+    localStorage.removeItem(this.jwtKey);
+    this.jwt = null;
+    this.emit();
   }
 
 }

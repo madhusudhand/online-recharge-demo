@@ -18,15 +18,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.authService.checkLogin().subscribe((data) => {
-      this.isLoggedIn = !!data;
+      this.isLoggedIn = data;
     });
-    // this.isLoggedIn = this.authService.isLoggedIn;
+
+    this.authService.emit();
   }
 
   logout() {
-    // this.authService.isLoggedIn = false;
-    this.authService.updateLogin(false);
-    localStorage.removeItem('jwt');
+    this.authService.clearLogin();
     this.router.navigateByUrl('/');
   }
 }

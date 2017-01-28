@@ -19,32 +19,31 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-
+    this.jwt = localStorage.getItem('jwt');
+    this.setLoginState();
   }
 
   login() {
-    // var _this: any = this;
-    localStorage.setItem('jwt', 'dummy');
-    // this.authService.isLoggedIn = true;
-    this.router.navigateByUrl('/recharge');
+    this.authService.login(this.username, this.password)
+    .subscribe(
+      (res: AuthData) => {
+        if (res.jwt) {
+          this.data = res;
+          this.jwt = res.jwt;
+          this.authService.setLogin(res.jwt);
+        }
 
-    this.authService.updateLogin(true);
-
-    // this.authService.login(this.username, this.password)
-    // .subscribe(
-    //   (res) => {
-    //     this.data = res;
-    //     this.jwt = this.data.jwt;
-    //     localStorage.setItem('jwt', this.data.jwt);
-    //   },
-    //   (err) => console.log(err)
-    // );
+        this.setLoginState();
+      },
+      (err) => console.log(err)
+    );
   }
 
-  logout() {
-    // this.jwt = null;
-    localStorage.removeItem('jwt');
-    this.router.navigateByUrl('/');
+
+  private setLoginState() {
+    if (this.jwt) {
+      this.router.navigateByUrl('/recharge');
+    }
   }
 
 }
