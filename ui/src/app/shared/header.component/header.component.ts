@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../auth/auth.service/auth.service';
+import { AuthData } from '../../auth/auth.service/auth-data.interface';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { AuthService } from '../../auth/auth.service/auth.service';
 })
 export class HeaderComponent implements OnInit {
   public isLoggedIn: boolean = false;
+  public user: AuthData;
 
   constructor(
     private authService: AuthService,
@@ -18,7 +20,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.authService.checkLogin().subscribe((data) => {
-      this.isLoggedIn = data;
+      console.log(data);
+      this.isLoggedIn = !!(data && data.jwt);
+      this.user = data;
     });
 
     this.authService.emit();

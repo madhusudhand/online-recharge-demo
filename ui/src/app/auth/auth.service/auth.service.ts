@@ -13,12 +13,13 @@ export class AuthService {
   private jwtKey: string = 'jwt';
   private url: string = '/api/auth/user';
 
+  public authData: AuthData;
   public jwt: string;
-  public eventStream: Subject<boolean>;
+  public eventStream: Subject<AuthData>;
 
   constructor(private http: Http) {
-    this.eventStream = new Subject<boolean>();
-    // this.updateLogin(!!localStorage.getItem('jwt'));
+    this.eventStream = new Subject<AuthData>();
+    this.emit();
   }
 
   login (username, password): Observable<AuthData> {
@@ -26,7 +27,7 @@ export class AuthService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post(this.url, body, options)
-                    .map(res => res.json())
+                    .map(res => this.setAuthData(res.json()))
                     .catch(this.handleError);
   }
 
@@ -39,8 +40,10 @@ export class AuthService {
     return Observable.throw(errMsg);
   }
 
-  private updateLogin(loggedIn: boolean){
-    this.eventStream.next(loggedIn);
+  private setAuthData(data) {
+    localStorage.setItem('auth', JSON.stringify(data));
+    // this.authData = data;
+    return data;
   }
 
   checkLogin() {
@@ -48,7 +51,8 @@ export class AuthService {
   }
 
   emit() {
-    this.updateLogin(!!localStorage.getItem(this.jwtKey));
+    const authData: AuthData = JSON.parse(localStorage.getItem('auth'));
+    this.eventStream.next(authData);
   }
 
   setLogin(jwt) {
@@ -58,6 +62,7 @@ export class AuthService {
   }
 
   clearLogin() {
+    localStorage.removeItem('auth');
     localStorage.removeItem(this.jwtKey);
     this.jwt = null;
     this.emit();

@@ -19,7 +19,7 @@ router.get('/user/:id', function(req, res, next) {
 
 router.post('/auth/user', function(req, res, next) {
   var user = userService.getUserLogin(req.body);
-  res.send(user || {});
+  res.send(user || 401);
 });
 
 

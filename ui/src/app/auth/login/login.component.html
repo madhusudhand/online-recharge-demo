@@ -4,15 +4,15 @@
       <div class="row">
         <div class="input-field">
           <input id="email" type="text" name="username" [(ngModel)]="username" class="validate"/>
-          <label for="email">Email</label>
+          <label for="email">Email or Mobile Number</label>
         </div>
         <div class="input-field">
           <input id="password" type="password" name="password" [(ngModel)]="password" class="validate"/>
           <label for="password">Password</label>
         </div><a (click)="login()" class="waves-effect waves-light btn">Login</a>
       </div>
-      <div style="color: #ccc">
-        (This is a demo version. You can input any values)
+      <div *ngIf="error" class="login-error">
+        Invalid Email/Mobile or password
       </div>
     </div>
   </form>

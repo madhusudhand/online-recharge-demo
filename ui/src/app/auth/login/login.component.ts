@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   public username: string;
   public password: string;
+  public error: any;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -31,11 +32,16 @@ export class LoginComponent implements OnInit {
           this.data = res;
           this.jwt = res.jwt;
           this.authService.setLogin(res.jwt);
+          this.error = null;
+        } else {
+          this.error = "invalid";
         }
 
         this.setLoginState();
       },
-      (err) => console.log(err)
+      (err) => {
+        this.error = err;
+      }
     );
   }
 

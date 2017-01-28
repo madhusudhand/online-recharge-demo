@@ -4,7 +4,9 @@
       <li><a routerLink="/login">Login</a></li>
     </ul>
     <ul *ngIf="isLoggedIn" class="right hide-on-med-and-down">
-      <li><a routerLink="/profile">Profile</a></li>
+      <li class="user">
+        {{ user.name }}
+      </li>
       <li><a (click)="logout()">Logout</a></li>
     </ul>
   </div>
