@@ -1,8 +1,9 @@
 <br/><br/>
-<div style="color: #43a047" *ngIf="submitted" class="center-align"><i style="font-size:64px" class="material-icons">check_circle</i>
+<div style="color: #43a047" *ngIf="progress=='success'" class="center-align"><i style="font-size:64px" class="material-icons">check_circle</i>
   <h4>Success</h4><br/><br/><a routerLink="/recharge/mobile">Recharge Another</a>
 </div>
-<div *ngIf="!submitted" class="row">
+
+<div *ngIf="!progress" class="row">
   <form (ngSubmit)="recharge()" #rechargeForm="ngForm" class="col s12">
     <div class="row">
       <div class="input-field col s2">
@@ -31,7 +32,10 @@
     <div class="row">
       <div class="input-field col s12 center-align">Amount Payable: $ {{model.amountPayable}}</div>
       <div class="input-field col s12 center-align">
-        <button type="submit" name="recharge" class="btn waves-effect waves-light">Pay - ${{rechargeData.amountPayable}}<i class="material-icons right">send</i></button>
+        <button type="button" name="recharge" class="btn waves-effect waves-light" (click)="pay()">
+          Pay - ${{rechargeData.amountPayable}}
+          <i class="material-icons right">send</i>
+        </button>
       </div>
     </div>
   </form>

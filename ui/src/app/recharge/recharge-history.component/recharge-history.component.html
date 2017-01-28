@@ -1,4 +1,30 @@
-<br/><br/><br/>
-<div style="color: #757575" class="center-align"><i style="font-size:64px" class="material-icons">receipt</i>
-  <h4>No History</h4>
+<br/>
+
+<div *ngIf="!history || history.length==0">
+  <br/><br/>
+  <div style="color: #757575" class="center-align"><i style="font-size:64px" class="material-icons">receipt</i>
+    <h4>No History</h4>
+  </div>
+</div>
+
+
+<div *ngIf="history.length > 0">
+  <table class="striped">
+    <tr>
+      <th>Kind</th>
+      <th>Mobile/DTH number</th>
+      <th>Recharge amount</th>
+      <th>Discount</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let item of history">
+      <td>{{ item.kind }}</td>
+      <td>{{ item.number }}</td>
+      <td>${{ item.amount }}</td>
+      <td>${{ item.discount }}</td>
+      <td>{{ item.date | date }}</td>
+      <td>{{ item.status }}</td>
+    </tr>
+  </table>
 </div>

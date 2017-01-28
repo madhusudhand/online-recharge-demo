@@ -16,5 +16,16 @@
       "name": "User 2 Full Name",
       "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsIm1vYmlsZSI6Ijg4ODg4ODg4ODgiLCJuYW1lIjoiVXNlciAyIEZ1bGwgTmFtZSIsImFkbWluIjp0cnVlfQ.z2kkL-aqDR1eZGEubF6CrotDXKrpQbeSNj4QGWuXtXw"
     }
+  ],
+
+  "coupons": [
+    { "code": "WELCOME10", "discountPercent": "10", "maxDiscount": "10" },
+    { "code": "GRAB20", "discountPercent": "20", "maxDiscount": "15" }
+  ],
+
+  "recharges": [
+    {"kind": "mobile", "user": 1 , "number": "9123456789", "amount": 100, "amountPaid": 90, "date": "2017-01-22T17:40:03.629Z", "status": "success"},
+    {"kind": "mobile", "user": 1 , "number": "9123456789", "amount": 50, "amountPaid": 50, "date": "2017-01-25T17:40:03.629Z", "status": "success"},
+    {"kind": "mobile", "user": 1 , "number": "9123456789", "amount": 100, "amountPaid": 100, "date": "2017-01-28T17:40:03.629Z", "status": "failed"}
   ]
 }

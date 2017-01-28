@@ -9,18 +9,18 @@ import { RechargeService } from '../services/recharge.service';
 })
 export class MobileComponent implements OnInit {
   public couponApplied: boolean = false;
-  public model: any = {
-    type: 'prepaid',
-    discountPercent: 0
-  };
+  public model: any;
 
-  constructor(
-    private router: Router,
-    private rechargeService: RechargeService
-  ){
-
+  constructor(private router: Router, private rechargeService: RechargeService){
   }
-  ngOnInit(){}
+
+  ngOnInit(){
+    this.model = {
+      type: 'mobile',
+      subtype: 'prepaid',
+      discountPercent: 0
+    };
+  }
 
   applyCoupon(): boolean {
     this.couponApplied = true;
