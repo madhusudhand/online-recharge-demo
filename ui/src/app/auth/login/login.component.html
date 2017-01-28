@@ -1,0 +1,19 @@
+<div *ngIf="!jwt" class="login center-block">
+  <div class="row">
+    <form class="col s4 push-s4">
+      <div class="card-panel">
+        <div class="row">
+          <div class="input-field">
+            <input id="email" type="text" name="username" [(ngModel)]="username" class="validate"/>
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input id="password" type="password" name="password" [(ngModel)]="password" class="validate"/>
+            <label for="password">Password</label>
+          </div><a (click)="login()" class="waves-effect waves-light btn">Login</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="jwt" class="login center-block"><a (click)="logout()" class="waves-effect waves-light btn">Logout</a></div>

@@ -1,0 +1,9 @@
+.coupon-applied {
+  color: #2e7d32;
+}
+
+.ng-dirty {
+  &.ng-invalid:not(form) {
+    // border: 1px solid red
+  }
+}

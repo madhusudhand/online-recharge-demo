@@ -1,0 +1,11 @@
+<nav role="navigation" class="light-blue lighten-1">
+  <div class="nav-wrapper container"><a id="logo-container" routerLink="/" class="brand-logo">Online Recharge</a>
+    <ul *ngIf="!isLoggedIn" class="right hide-on-med-and-down">
+      <li><a routerLink="/login">Login</a></li>
+    </ul>
+    <ul *ngIf="isLoggedIn" class="right hide-on-med-and-down">
+      <li><a routerLink="/profile">Profile</a></li>
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</nav>

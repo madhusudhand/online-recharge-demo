@@ -1,0 +1,49 @@
+br
+br
+.row
+  form.col.s12((ngSubmit)='recharge()' #rechargeForm='ngForm')
+    .row
+      .input-field.col.s2
+        =" "
+      .input-field.col.s4
+        input#recharge_number.form-control(
+          type='text', name='number',
+          [(ngModel)]='model.number', required)
+        label(for='recharge_number') Mobile Number
+      .input-field.col.s6
+        input#recharge_prepaid.with-gap(
+          name='recharge_type', type='radio',
+          value='prepaid',
+          [(ngModel)]='model.type')
+        label(for='recharge_prepaid') Prepaid
+        input#recharge_postpaid.with-gap(
+          name='recharge_type', type='radio',
+          value='postpaid', [(ngModel)]='model.type')
+        label(for='recharge_postpaid') Postpaid
+    .row
+      .input-field.col.s2
+        =" "
+      .input-field.col.s4
+        input#recharge_amount.form-control(
+          type='text', name='amount', required
+          [(ngModel)]='model.amount')
+          //-  (change)='calculatePayableAmount()')
+        label(for='recharge_number') Amount
+      .input-field.col.s3
+        span(*ngIf="!couponApplied")
+          input#recharge_coupon.form-control(type='text', name='coupon', [(ngModel)]='model.coupon')
+          label(for='recharge_coupon') Coupon code
+        span.coupon-applied(*ngIf="couponApplied")
+          | Coupon Applied
+          i.material-icons.right check
+          br
+          | (10% off)
+      .input-field.col.s3(*ngIf="!couponApplied")
+        a(href='', (click)='applyCoupon()') Apply
+    .row
+      .input-field.col.s12.center-align
+        | Amount Payable: $ {{model.amount - model.amount * model.discountPercent || 0}}
+      .input-field.col.s12.center-align
+        button.btn.waves-effect.waves-light(type='submit', name='recharge')
+          | Recharge
+          i.material-icons.right send

@@ -1,0 +1,18 @@
+#index-banner.section.no-pad-bot
+  .container
+    br
+    .row
+      .col.s12
+        ul.tabs
+          li.tab.col.s3
+            a.active(routerLink='/recharge/mobile') Mobile Recharge
+          li.tab.col.s3
+            a(routerLink='/recharge/dth') DTH Recharge
+          li.tab.col.s3.disabled
+            a Bill Payments
+          li.tab.col.s3
+            a(routerLink='/recharge/history') History
+          li.tab.col.s3
+            a(routerLink='/recharge/feedback') Feedback
+      .col.s12
+        router-outlet

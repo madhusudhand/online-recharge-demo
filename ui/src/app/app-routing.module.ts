@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+import { LoginComponent } from './auth/login/login.component';
+import { LandingComponent } from './home/landing/landing.component';
 
 const routes: Routes = [
   {
     path: '',
-    children: []
-  }
+    component: LandingComponent
+  },
+  { path: 'login',  component: LoginComponent },
 ];
 
 @NgModule({
