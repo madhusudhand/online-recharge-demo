@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { RechargeService } from '../services/recharge.service';
 
 @Component({
-  selector: 'mobile-recharge',
-  templateUrl: './mobile.component.html',
-  styleUrls: ['./mobile.component.scss']
+  selector: 'app-dth',
+  templateUrl: './dth.component.html',
+  styleUrls: ['./dth.component.css']
 })
-export class MobileComponent implements OnInit {
+export class DthComponent implements OnInit {
+  public model:any;
   public couponApplied: boolean;
-  public model: any;
 
-  constructor(private router: Router, private rechargeService: RechargeService){
-  }
+  constructor(private rechargeService: RechargeService, private router: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.model = {
-      type: 'mobile',
-      subtype: 'prepaid',
+      type: 'dth',
       discountPercent: 0
     };
     this.couponApplied = false;
@@ -34,7 +33,7 @@ export class MobileComponent implements OnInit {
     this.model.amountPayable = this.model.amount * ( 1 - this.model.discountPercent);
     console.log(this.model);
     this.rechargeService.data = this.model;
-    this.router.navigateByUrl('/recharge/mobile/pay');
+    this.router.navigateByUrl('/recharge/dth/pay');
     return false;
   }
 }

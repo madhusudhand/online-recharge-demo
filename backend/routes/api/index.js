@@ -24,7 +24,7 @@ router.post('/auth/user', function(req, res, next) {
 });
 
 
-router.post('/recharge/mobile', function(req, res, next) {
+router.post('/recharge', function(req, res, next) {
   var data = req.body.data;
   rechargeService.newRecharge({
     kind: data.type,

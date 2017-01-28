@@ -4,7 +4,8 @@ import { RechargeService } from '../services/recharge.service';
 
 @Component({
   selector: 'recharge-history',
-  templateUrl: './recharge-history.component.html'
+  templateUrl: './recharge-history.component.html',
+  styleUrls: ['./recharge-history.component.css']
 })
 export class RechargeHistoryComponent implements OnInit {
   public history: any[] = [];

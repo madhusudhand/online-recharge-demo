@@ -1,0 +1,10 @@
+.success {
+  color: green;
+}
+.failed {
+  color: red;
+}
+
+.plm {
+  padding-left: 20px;
+}

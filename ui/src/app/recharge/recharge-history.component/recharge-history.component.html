@@ -11,7 +11,7 @@
 <div *ngIf="history.length > 0">
   <table class="striped">
     <tr>
-      <th>Kind</th>
+      <th class="plm">Recharge Type</th>
       <th>Mobile/DTH number</th>
       <th>Recharge amount</th>
       <th>Discount</th>
@@ -19,12 +19,12 @@
       <th>Status</th>
     </tr>
     <tr *ngFor="let item of history">
-      <td>{{ item.kind }}</td>
+      <td class="plm">{{ item.kind }}</td>
       <td>{{ item.number }}</td>
       <td>${{ item.amount }}</td>
       <td>${{ item.discount }}</td>
       <td>{{ item.date | date }}</td>
-      <td>{{ item.status }}</td>
+      <td [ngClass]="item.status">{{ item.status }}</td>
     </tr>
   </table>
 </div>
