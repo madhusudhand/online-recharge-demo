@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { RechargeModule } from './recharge/recharge.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     AuthModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    RechargeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

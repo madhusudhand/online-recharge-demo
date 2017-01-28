@@ -1,0 +1,38 @@
+<br/><br/>
+<div style="color: #43a047" *ngIf="submitted" class="center-align"><i style="font-size:64px" class="material-icons">check_circle</i>
+  <h4>Success</h4><br/><br/><a routerLink="/recharge/mobile">Recharge Another</a>
+</div>
+<div *ngIf="!submitted" class="row">
+  <form (ngSubmit)="recharge()" #rechargeForm="ngForm" class="col s12">
+    <div class="row">
+      <div class="input-field col s2">
+      </div>
+      <div class="input-field col s6">
+        <input id="pay_cc_number" type="text" name="number" [(ngModel)]="model.number" required="required" class="form-control"/>
+        <label for="recharge_number">Credit Card Number</label>
+      </div>
+      <div class="input-field col s2">
+        <input id="pay_cc_cvv" type="text" name="coupon" [(ngModel)]="model.cvv" required="required" class="form-control"/>
+        <label for="recharge_coupon">CVV</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s2">
+      </div>
+      <div class="input-field col s6">
+        <input id="pay_cc_name" type="text" name="amount" required="required" [(ngModel)]="model.cardname" class="form-control"/>
+        <label for="recharge_number">Name on the Card</label>
+      </div>
+      <div class="input-field col s2">
+        <input id="pay_cc_expiry" type="text" name="amount" required="required" [(ngModel)]="model.expirydate" class="form-control"/>
+        <label for="recharge_number">Expiry Date</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 center-align">Amount Payable: $ {{model.amountPayable}}</div>
+      <div class="input-field col s12 center-align">
+        <button type="submit" name="recharge" class="btn waves-effect waves-light">Pay - ${{rechargeData.amountPayable}}<i class="material-icons right">send</i></button>
+      </div>
+    </div>
+  </form>
+</div>

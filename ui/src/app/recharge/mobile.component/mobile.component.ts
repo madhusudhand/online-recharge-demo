@@ -4,8 +4,8 @@ import { RechargeService } from '../services/recharge.service';
 
 @Component({
   selector: 'mobile-recharge',
-  templateUrl: 'mobile.component.pug',
-  styleUrls: ['mobile.component.scss']
+  templateUrl: './mobile.component.html',
+  styleUrls: ['./mobile.component.scss']
 })
 export class MobileComponent implements OnInit {
   public couponApplied: boolean = false;

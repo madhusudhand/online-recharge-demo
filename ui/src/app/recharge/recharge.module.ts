@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { rechargeRoutes, rechargeRouteProviders } from './recharge.routes';
+import { rechargeRouteProviders, rechargeRoutes } from './recharge.routes';
 import { RechargeComponent } from './recharge.component';
 import { MobileComponent } from './mobile.component';
 import { ComingSoonComponent } from './comingsoon.component';

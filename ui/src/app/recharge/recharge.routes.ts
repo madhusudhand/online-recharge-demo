@@ -17,6 +17,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'mobile',
+        pathMatch: 'full'
       },
       {
         path: 'mobile',

@@ -4,7 +4,7 @@ import { RechargeService } from '../services/recharge.service';
 
 @Component({
   selector: 'make-payment',
-  templateUrl: 'payment.component.pug',
+  templateUrl: './payment.component.html',
 })
 export class PaymentComponent implements OnInit {
   public model: any = {};

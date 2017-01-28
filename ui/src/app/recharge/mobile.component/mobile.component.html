@@ -1,0 +1,35 @@
+<br/><br/>
+<div class="row">
+  <form (ngSubmit)="recharge()" #rechargeForm="ngForm" class="col s12">
+    <div class="row">
+      <div class="input-field col s2"></div>
+      <div class="input-field col s4">
+        <input id="recharge_number" type="text" name="number" [(ngModel)]="model.number" required="required" class="form-control"/>
+        <label for="recharge_number">Mobile Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="recharge_prepaid" name="recharge_type" type="radio" value="prepaid" [(ngModel)]="model.type" class="with-gap"/>
+        <label for="recharge_prepaid">Prepaid</label>
+        <input id="recharge_postpaid" name="recharge_type" type="radio" value="postpaid" [(ngModel)]="model.type" class="with-gap"/>
+        <label for="recharge_postpaid">Postpaid</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s2"></div>
+      <div class="input-field col s4">
+        <input id="recharge_amount" type="text" name="amount" required="required" [(ngModel)]="model.amount" class="form-control"/>
+        <label for="recharge_number">Amount</label>
+      </div>
+      <div class="input-field col s3"><span *ngIf="!couponApplied">
+          <input id="recharge_coupon" type="text" name="coupon" [(ngModel)]="model.coupon" class="form-control"/>
+          <label for="recharge_coupon">Coupon code</label></span><span *ngIf="couponApplied" class="coupon-applied">Coupon Applied<i class="material-icons right">check</i><br/>(10% off)</span></div>
+      <div *ngIf="!couponApplied" class="input-field col s3"><a href="" (click)="applyCoupon()">Apply</a></div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 center-align">Amount Payable: $ {{model.amount - model.amount * model.discountPercent || 0}}</div>
+      <div class="input-field col s12 center-align">
+        <button type="submit" name="recharge" class="btn waves-effect waves-light">Recharge<i class="material-icons right">send</i></button>
+      </div>
+    </div>
+  </form>
+</div>

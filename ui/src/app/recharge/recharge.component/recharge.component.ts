@@ -3,8 +3,8 @@ declare var $:any;
 
 @Component({
   selector: 'recharge',
-  templateUrl: 'recharge.component.pug',
-  styleUrls: ['recharge.component.scss'],
+  templateUrl: './recharge.component.html',
+  styleUrls: ['./recharge.component.scss'],
 })
 export class RechargeComponent implements OnInit {
   constructor() {}
