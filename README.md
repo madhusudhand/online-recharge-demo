@@ -57,14 +57,12 @@ This starts the front end app at http://localhost:4200.
 
 ## Preview
 
-<img src="screenshots/homepage.png" width="400">
-<img src="screenshots/signup.png" width="400">
-<img src="screenshots/login.png" width="400">
-<img src="screenshots/mobile_recharge.png" width="400">
-<img src="screenshots/mobile_recharge2.png" width="400">
-<img src="screenshots/mobile_recharge3.png" width="400">
-<img src="screenshots/dth_recharge.png" width="400">
-<img src="screenshots/bill_pay.png" width="400">
-<img src="screenshots/history.png" width="400">
-
-
+![](screenshots/homepage.png)
+![](screenshots/signup.png)
+![](screenshots/login.png)
+![](screenshots/mobile_recharge.png)
+![](screenshots/mobile_recharge2.png)
+![](screenshots/mobile_recharge3.png)
+![](screenshots/dth_recharge.png)
+![](screenshots/bill_pay.png)
+![](screenshots/history.png)
