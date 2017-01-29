@@ -19,7 +19,19 @@ router.get('/user/:id', function(req, res, next) {
   });
 });
 
-// route to login
+// route for user signup
+router.post('/user', function(req, res, next) {
+  var status = userService.addUser(req.body.user);
+  if (status) {
+    res.send({
+      status: 'success'
+    });
+  } else {
+    res.sendStatus(400);
+  }
+});
+
+// route for login
 router.post('/auth/user', function(req, res, next) {
   var user = userService.getUserLogin(req.body);
   res.send(user || 401);

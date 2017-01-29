@@ -1,0 +1,12 @@
+.success-card {
+  margin-top: 100px;
+  color: #43a047;
+}
+
+.success-card .material-icons {
+  font-size: 64px;
+}
+
+.signup-error {
+  color: red;
+}

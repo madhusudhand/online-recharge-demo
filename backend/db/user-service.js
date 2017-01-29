@@ -7,7 +7,28 @@ class UserService {
   }
 
   addUser(user) {
-    this.data.users.push(user);
+    const exists = _.chain(this.data.users)
+                  .find(u => u.email == user.email || u.mobile == user.mobile)
+                  .value();
+
+    if (exists) return false;
+
+    const maxIdUser = _.chain(this.data.users)
+                       .maxBy('id')
+                       .value();
+
+    this.data.users.push({
+      id: maxIdUser.id + 1,
+      email: user.email,
+      mobile: user.mobile,
+      password: user.password,
+      name: user.fullname,
+      jwt: "123"
+    });
+
+    console.log(this.data.users);
+
+    return true;
   }
 
   getUser(id) {

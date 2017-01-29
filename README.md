@@ -2,11 +2,11 @@
 
 This project was implemented based on the following technologies.
 
-##### Front End
+###### Front End
 - Angular 2 (with TypeScript)
 - Materialize css
 
-##### Backend
+###### Backend
 - Node.js
 - Express
 
@@ -36,7 +36,7 @@ $ bower install
 
 ## Run your app
 
-**Backend**
+###### Backend
 
 ```
 $ cd path/to/backend
@@ -45,13 +45,11 @@ $ npm start
 
 This starts the backend app at http://localhost:3000.
 
-**Front end**
+###### Front end
 
 ```
 $ cd path/to/ui
 $ npm start
 ```
 
-This starts the backend app at http://localhost:4200.
-
-Open the browser and navigate to http://localhost:4200.
+This starts the front end app at http://localhost:4200.
