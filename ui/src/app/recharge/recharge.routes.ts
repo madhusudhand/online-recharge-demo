@@ -9,6 +9,7 @@ import { WrapperComponent } from './wrapper.component';
 import { FeedbackComponent } from './feedback.component';
 import { RechargeService } from './services/recharge.service';
 import { DthComponent } from './dth.component/dth.component';
+import { BillPayComponent } from './bill-pay/bill-pay.component';
 
 const routes: Routes = [
   {
@@ -54,7 +55,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: ComingSoonComponent
+            component: BillPayComponent
           },
           {
             path: 'pay',

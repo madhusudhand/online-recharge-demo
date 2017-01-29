@@ -11,6 +11,7 @@ import { PaymentComponent } from './payment.component';
 import { WrapperComponent } from './wrapper.component';
 import { FeedbackComponent } from './feedback.component';
 import { DthComponent } from './dth.component/dth.component';
+import { BillPayComponent } from './bill-pay/bill-pay.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { DthComponent } from './dth.component/dth.component';
     WrapperComponent,
     FeedbackComponent,
     DthComponent,
+    BillPayComponent,
   ],
   providers: [
     rechargeRouteProviders
