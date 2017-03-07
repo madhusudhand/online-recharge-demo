@@ -53,3 +53,16 @@ $ npm start
 ```
 
 This starts the front end app at http://localhost:4200.
+
+
+## Preview
+
+![](screenshots/homepage.png)
+![](screenshots/signup.png)
+![](screenshots/login.png)
+![](screenshots/mobile_recharge.png)
+![](screenshots/mobile_recharge2.png)
+![](screenshots/mobile_recharge3.png)
+![](screenshots/dth_recharge.png)
+![](screenshots/bill_pay.png)
+![](screenshots/history.png)
