@@ -21,7 +21,7 @@ router.get('/user/:id', function(req, res, next) {
 
 // route for user signup
 router.post('/user', function(req, res, next) {
-  var status = userService.addUser(req.body.user);
+  var status = userService.addUser(req.body);
   if (status) {
     res.send({
       status: 'success'
@@ -41,9 +41,9 @@ router.post('/auth/user', function(req, res, next) {
 // this is same for both mobile and dth
 // thy differ with "kind" property
 router.post('/recharge', function(req, res, next) {
-  var data = req.body.data;
+  var data = req.body;
   rechargeService.newRecharge({
-    kind: data.type,
+    type: data.type,
     user: data.userId,
     number: data.number,
     amount: data.amount,
