@@ -6,9 +6,13 @@ This project was implemented based on the following technologies.
 - Angular 2 (with TypeScript)
 - Materialize css
 
-###### Backend
+###### Backend1
 - Node.js
 - Express
+
+###### Backend2
+- PHP
+- Laravel 5.4
 
 ## Setup
 
@@ -18,11 +22,29 @@ To run this app, you need the following to be installed
 
 Run the following commands to get started
 
-###### Backend
+###### Backend1
 
 ```
 $ cd path/to/backend
 $ npm install
+```
+
+###### Backend2
+
+- Install xampp
+- start xampp
+- login to php-my-admin (localhost:port/phpmyadmin)
+- create a new database with name 'recharge'.
+- configure the database name in backend2/.env file
+
+(windows)
+Set PHP location in environment variables.
+http://stackoverflow.com/questions/15514444/why-cant-i-use-php-artisan-cmd-in-laravel-path-win
+
+```
+$ composer install
+$ php artisan migrate
+$ php artisan serve
 ```
 
 ###### Front end
