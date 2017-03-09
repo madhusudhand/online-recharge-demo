@@ -70,10 +70,10 @@ export class AuthService {
 
 
   signup(user: any): Observable<any> {
-    let body = JSON.stringify({ user });
+    // let body = JSON.stringify({ user });
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('/api/user', body, options)
+    return this.http.post('/api/user', user, options)
                     .map(res => res.json())
                     .catch(this.handleError);
   }

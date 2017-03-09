@@ -12,7 +12,7 @@ export class RechargeService {
     const userId: number = JSON.parse(localStorage.getItem('auth')).id;
     data.userId = userId;
 
-    return this.http.post('/api/recharge', { data: data })
+    return this.http.post('/api/recharge', data)
       .map((res: Response) => res.json());
   }
 
