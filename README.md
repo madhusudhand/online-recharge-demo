@@ -31,7 +31,8 @@ $ npm install
 
 ###### Backend2
 
-- Install xampp
+- Install xampp (https://www.apachefriends.org/index.html)
+- install composer (https://getcomposer.org/)
 - start xampp
 - login to php-my-admin (localhost:port/phpmyadmin)
 - create a new database with name 'recharge'.
